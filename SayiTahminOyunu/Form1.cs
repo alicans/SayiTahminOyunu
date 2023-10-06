@@ -28,11 +28,13 @@ namespace SayiTahminOyunu
 
         private void txtSayi_TextChanged(object sender, EventArgs e)
         {
-            if (!btnTahmin.Enabled)
+
+            // sayý kontrolleri
+            if (txtSayi.Text == "" || !int.TryParse(txtSayi.Text, out int tahminEdilen) || (txtSayi.Text.Contains(" ") && btnTahmin.Enabled))
+                btnTahmin.Enabled = false;
+            else if (!btnTahmin.Enabled && !txtSayi.Text.Contains(" "))
                 btnTahmin.Enabled = true;
 
-            if(string.IsNullOrEmpty(txtSayi.Text) && btnTahmin.Enabled)
-                btnTahmin.Enabled = false;
         }
     }
 }
