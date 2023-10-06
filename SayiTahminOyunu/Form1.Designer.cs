@@ -80,6 +80,7 @@
             // timer1
             // 
             timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // oyunPanel
             // 
@@ -94,7 +95,7 @@
             // 
             // lblMesaj
             // 
-            lblMesaj.Location = new Point(0, 98);
+            lblMesaj.Location = new Point(0, 90);
             lblMesaj.Name = "lblMesaj";
             lblMesaj.Size = new Size(355, 45);
             lblMesaj.TabIndex = 11;
@@ -103,12 +104,13 @@
             // btnTahmin
             // 
             btnTahmin.Enabled = false;
-            btnTahmin.Location = new Point(0, 48);
+            btnTahmin.Location = new Point(3, 36);
             btnTahmin.Name = "btnTahmin";
             btnTahmin.Size = new Size(355, 38);
             btnTahmin.TabIndex = 10;
             btnTahmin.Text = "Tahmin Et";
             btnTahmin.UseVisualStyleBackColor = true;
+            btnTahmin.Click += btnTahmin_Click;
             // 
             // txtSayi
             // 
