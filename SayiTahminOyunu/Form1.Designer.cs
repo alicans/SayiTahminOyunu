@@ -30,15 +30,17 @@
         {
             components = new System.ComponentModel.Container();
             btnBaslat = new Button();
-            label1 = new Label();
-            txtSayi = new TextBox();
-            btnTahmin = new Button();
             statusStrip1 = new StatusStrip();
             lblDurum = new ToolStripStatusLabel();
             pbarDurum = new ToolStripProgressBar();
-            lblMesaj = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            oyunPanel = new Panel();
+            lblMesaj = new Label();
+            btnTahmin = new Button();
+            txtSayi = new TextBox();
+            label1 = new Label();
             statusStrip1.SuspendLayout();
+            oyunPanel.SuspendLayout();
             SuspendLayout();
             // 
             // btnBaslat
@@ -50,32 +52,7 @@
             btnBaslat.TabIndex = 0;
             btnBaslat.Text = "Oyunu Başlat";
             btnBaslat.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(34, 87);
-            label1.Name = "label1";
-            label1.Size = new Size(249, 21);
-            label1.TabIndex = 1;
-            label1.Text = "[1-100] arasında bir sayı giriniz:";
-            // 
-            // txtSayi
-            // 
-            txtSayi.Location = new Point(289, 84);
-            txtSayi.Name = "txtSayi";
-            txtSayi.Size = new Size(100, 29);
-            txtSayi.TabIndex = 2;
-            // 
-            // btnTahmin
-            // 
-            btnTahmin.Location = new Point(34, 131);
-            btnTahmin.Name = "btnTahmin";
-            btnTahmin.Size = new Size(355, 38);
-            btnTahmin.TabIndex = 3;
-            btnTahmin.Text = "Tahmin Et";
-            btnTahmin.UseVisualStyleBackColor = true;
+            btnBaslat.Click += btnBaslat_Click;
             // 
             // statusStrip1
             // 
@@ -100,28 +77,64 @@
             pbarDurum.Name = "pbarDurum";
             pbarDurum.Size = new Size(100, 16);
             // 
-            // lblMesaj
-            // 
-            lblMesaj.Location = new Point(34, 181);
-            lblMesaj.Name = "lblMesaj";
-            lblMesaj.Size = new Size(355, 45);
-            lblMesaj.TabIndex = 7;
-            lblMesaj.TextAlign = ContentAlignment.TopCenter;
-            // 
             // timer1
             // 
             timer1.Interval = 1000;
+            // 
+            // oyunPanel
+            // 
+            oyunPanel.Controls.Add(lblMesaj);
+            oyunPanel.Controls.Add(btnTahmin);
+            oyunPanel.Controls.Add(txtSayi);
+            oyunPanel.Controls.Add(label1);
+            oyunPanel.Location = new Point(34, 76);
+            oyunPanel.Name = "oyunPanel";
+            oyunPanel.Size = new Size(355, 156);
+            oyunPanel.TabIndex = 8;
+            // 
+            // lblMesaj
+            // 
+            lblMesaj.Location = new Point(0, 98);
+            lblMesaj.Name = "lblMesaj";
+            lblMesaj.Size = new Size(355, 45);
+            lblMesaj.TabIndex = 11;
+            lblMesaj.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // btnTahmin
+            // 
+            btnTahmin.Enabled = false;
+            btnTahmin.Location = new Point(0, 48);
+            btnTahmin.Name = "btnTahmin";
+            btnTahmin.Size = new Size(355, 38);
+            btnTahmin.TabIndex = 10;
+            btnTahmin.Text = "Tahmin Et";
+            btnTahmin.UseVisualStyleBackColor = true;
+            // 
+            // txtSayi
+            // 
+            txtSayi.Location = new Point(255, 1);
+            txtSayi.Name = "txtSayi";
+            txtSayi.Size = new Size(100, 29);
+            txtSayi.TabIndex = 9;
+            txtSayi.TextChanged += txtSayi_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(0, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(249, 21);
+            label1.TabIndex = 8;
+            label1.Text = "[1-100] arasında bir sayı giriniz:";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(422, 331);
-            Controls.Add(lblMesaj);
+            Controls.Add(oyunPanel);
             Controls.Add(statusStrip1);
-            Controls.Add(btnTahmin);
-            Controls.Add(txtSayi);
-            Controls.Add(label1);
             Controls.Add(btnBaslat);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
@@ -129,6 +142,8 @@
             Text = "Sayı Tahmin Oyunu";
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            oyunPanel.ResumeLayout(false);
+            oyunPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,13 +151,14 @@
         #endregion
 
         private Button btnBaslat;
-        private Label label1;
-        private TextBox txtSayi;
-        private Button btnTahmin;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lblDurum;
         private ToolStripProgressBar pbarDurum;
-        private Label lblMesaj;
         private System.Windows.Forms.Timer timer1;
+        private Panel oyunPanel;
+        private Label lblMesaj;
+        private Button btnTahmin;
+        private TextBox txtSayi;
+        private Label label1;
     }
 }
