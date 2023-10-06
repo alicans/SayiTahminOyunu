@@ -28,12 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnBaslat = new Button();
+            label1 = new Label();
+            txtSayi = new TextBox();
+            SuspendLayout();
+            // 
+            // btnBaslat
+            // 
+            btnBaslat.Location = new Point(34, 71);
+            btnBaslat.Margin = new Padding(4, 4, 4, 4);
+            btnBaslat.Name = "btnBaslat";
+            btnBaslat.Size = new Size(355, 56);
+            btnBaslat.TabIndex = 0;
+            btnBaslat.Text = "Oyunu Başlat";
+            btnBaslat.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(34, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(249, 21);
+            label1.TabIndex = 1;
+            label1.Text = "[1-100] arasında bir sayı giriniz:";
+            // 
+            // txtSayi
+            // 
+            txtSayi.Location = new Point(289, 20);
+            txtSayi.Name = "txtSayi";
+            txtSayi.Size = new Size(100, 29);
+            txtSayi.TabIndex = 2;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(420, 237);
+            Controls.Add(txtSayi);
+            Controls.Add(label1);
+            Controls.Add(btnBaslat);
+            Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button btnBaslat;
+        private Label label1;
+        private TextBox txtSayi;
     }
 }
