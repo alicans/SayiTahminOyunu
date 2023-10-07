@@ -21,6 +21,8 @@ namespace SayiTahminOyunu
             // Rastgele sayý üret
             uretilenSayi = rnd.Next(1, 101);
 
+            // label'larý ayarla.
+            lblMesaj.Text = "";
             lblDurum.Text = "Süreniz Baþladý.";
 
             // Progress barýn durumunu ayarla. 100'den geri sayacak.
@@ -38,19 +40,16 @@ namespace SayiTahminOyunu
             // sayý kontrolleri
             if (txtSayi.Text == "" || !int.TryParse(txtSayi.Text, out int yazilanSayi) || (txtSayi.Text.Contains(" ") && btnTahmin.Enabled))
                 btnTahmin.Enabled = false;
+
             else if (!btnTahmin.Enabled && !txtSayi.Text.Contains(" "))
                 btnTahmin.Enabled = true;
-
-
 
         }
 
         private void btnTahmin_Click(object sender, EventArgs e)
         {
-            
 
             // tahmin edilen sayýyý al
-            
             tahminEdilen = Convert.ToInt32(txtSayi.Text);
 
             if (pbarDurum.Value != 0)
@@ -62,17 +61,13 @@ namespace SayiTahminOyunu
                     btnBaslat.Enabled = true;
                     txtSayi.Enabled = false;
 
-                    lblMesaj.Text = "KAZANDINIZ!!!";
+                    lblMesaj.Text = tahminEdilen + ". KAZANDINIZ!!!";
                     lblDurum.Text = "Tebrikler.";
                 }
-                    
-
-                else if (tahminEdilen < uretilenSayi )
-                    lblMesaj.Text = tahminEdilen.ToString() + "=> Küçük sayý girdiniz";
-
+                else if (tahminEdilen < uretilenSayi)
+                    lblMesaj.Text = tahminEdilen.ToString() + " => Küçük sayý girdiniz. Yukarý.";
                 else
-                    lblMesaj.Text = tahminEdilen.ToString() + "=> Büyük sayý girdiniz";
-
+                    lblMesaj.Text = tahminEdilen.ToString() + " => Büyük sayý girdiniz. Aþaðý.";
             }
             else
             {
@@ -80,12 +75,7 @@ namespace SayiTahminOyunu
                 btnTahmin.Enabled = false;
             }
 
-
             txtSayi.Text = "";
-
-
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
