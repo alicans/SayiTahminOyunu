@@ -28,7 +28,7 @@ namespace SayiTahminOyunu
             // Oyunu baþlatýnca aç
             oyunPanel.Visible = true;
 
-            
+
         }
 
         private void txtSayi_TextChanged(object sender, EventArgs e)
@@ -53,15 +53,22 @@ namespace SayiTahminOyunu
         private void timer1_Tick(object sender, EventArgs e)
         {
             //progressbar value deðerini 1 azalt
-                pbarDurum.Value--;
+            pbarDurum.Value--;
 
-            if (pbarDurum.Value == pbarDurum.Minimum) 
+            if (pbarDurum.Value > 30 && pbarDurum.Value <= 50)
+                lblDurum.Text = "Süre daha var :)";
+            if (pbarDurum.Value > 20 && pbarDurum.Value <= 29)
+                lblDurum.Text = "Süre azalýyor..";
+            if (pbarDurum.Value > 1 && pbarDurum.Value <= 19)
+                lblDurum.Text = "Süre çok az kaldý";
+
+            if (pbarDurum.Value == pbarDurum.Minimum)
             {
                 timer1.Stop();
                 btnBaslat.Enabled = true;
                 lblDurum.Text = "Süreniz bitti.";
             }
-               
+
         }
     }
 }

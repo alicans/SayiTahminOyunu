@@ -90,12 +90,12 @@
             oyunPanel.Controls.Add(label1);
             oyunPanel.Location = new Point(34, 76);
             oyunPanel.Name = "oyunPanel";
-            oyunPanel.Size = new Size(355, 156);
+            oyunPanel.Size = new Size(376, 156);
             oyunPanel.TabIndex = 8;
             // 
             // lblMesaj
             // 
-            lblMesaj.Location = new Point(0, 90);
+            lblMesaj.Location = new Point(3, 92);
             lblMesaj.Name = "lblMesaj";
             lblMesaj.Size = new Size(355, 45);
             lblMesaj.TabIndex = 11;
@@ -104,7 +104,7 @@
             // btnTahmin
             // 
             btnTahmin.Enabled = false;
-            btnTahmin.Location = new Point(3, 36);
+            btnTahmin.Location = new Point(0, 51);
             btnTahmin.Name = "btnTahmin";
             btnTahmin.Size = new Size(355, 38);
             btnTahmin.TabIndex = 10;
@@ -114,9 +114,9 @@
             // 
             // txtSayi
             // 
-            txtSayi.Location = new Point(255, 1);
+            txtSayi.Location = new Point(259, 1);
             txtSayi.Name = "txtSayi";
-            txtSayi.Size = new Size(100, 29);
+            txtSayi.Size = new Size(96, 29);
             txtSayi.TabIndex = 9;
             txtSayi.TextChanged += txtSayi_TextChanged;
             // 
