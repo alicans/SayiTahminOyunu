@@ -31,8 +31,9 @@
             components = new System.ComponentModel.Container();
             btnBaslat = new Button();
             statusStrip1 = new StatusStrip();
-            lblDurum = new ToolStripStatusLabel();
             pbarDurum = new ToolStripProgressBar();
+            lblDurum = new ToolStripStatusLabel();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
             oyunPanel = new Panel();
             lblMesaj = new Label();
@@ -56,26 +57,32 @@
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { lblDurum, pbarDurum });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { pbarDurum, lblDurum, toolStripStatusLabel1 });
             statusStrip1.Location = new Point(0, 309);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(422, 22);
             statusStrip1.TabIndex = 6;
             statusStrip1.Text = "statusStrip1";
             // 
-            // lblDurum
-            // 
-            lblDurum.AutoSize = false;
-            lblDurum.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDurum.Name = "lblDurum";
-            lblDurum.Size = new Size(173, 17);
-            lblDurum.Text = "Oyunu başlatmanız bekleniyor..";
-            lblDurum.TextAlign = ContentAlignment.TopCenter;
-            // 
             // pbarDurum
             // 
             pbarDurum.Name = "pbarDurum";
             pbarDurum.Size = new Size(100, 16);
+            // 
+            // lblDurum
+            // 
+            lblDurum.AutoSize = false;
+            lblDurum.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            lblDurum.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDurum.Name = "lblDurum";
+            lblDurum.Size = new Size(173, 17);
+            lblDurum.Text = "Oyunu başlatmanız bekleniyor..";
+            lblDurum.TextAlign = ContentAlignment.TopLeft;
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(0, 17);
             // 
             // timer1
             // 
@@ -90,12 +97,12 @@
             oyunPanel.Controls.Add(label1);
             oyunPanel.Location = new Point(34, 76);
             oyunPanel.Name = "oyunPanel";
-            oyunPanel.Size = new Size(376, 156);
+            oyunPanel.Size = new Size(363, 156);
             oyunPanel.TabIndex = 8;
             // 
             // lblMesaj
             // 
-            lblMesaj.Location = new Point(3, 92);
+            lblMesaj.Location = new Point(0, 101);
             lblMesaj.Name = "lblMesaj";
             lblMesaj.Size = new Size(355, 45);
             lblMesaj.TabIndex = 11;
@@ -162,5 +169,6 @@
         private Button btnTahmin;
         private TextBox txtSayi;
         private Label label1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

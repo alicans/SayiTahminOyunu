@@ -14,6 +14,7 @@ namespace SayiTahminOyunu
         private void btnBaslat_Click(object sender, EventArgs e)
         {
             btnBaslat.Enabled = false;
+            txtSayi.Enabled = true;
 
             // Önce timer baþlat
             timer1.Start();
@@ -46,14 +47,54 @@ namespace SayiTahminOyunu
 
         private void btnTahmin_Click(object sender, EventArgs e)
         {
+            
+
             // tahmin edilen sayýyý al
+            
             tahminEdilen = Convert.ToInt32(txtSayi.Text);
+
+            if (pbarDurum.Value != 0)
+            {
+                if (uretilenSayi == tahminEdilen)
+                {
+                    timer1.Stop();
+
+                    btnBaslat.Enabled = true;
+                    txtSayi.Enabled = false;
+
+                    lblMesaj.Text = "KAZANDINIZ!!!";
+                    lblDurum.Text = "Tebrikler.";
+                }
+                    
+
+                else if (tahminEdilen < uretilenSayi )
+                    lblMesaj.Text = tahminEdilen.ToString() + "=> Küçük sayý girdiniz";
+
+                else
+                    lblMesaj.Text = tahminEdilen.ToString() + "=> Büyük sayý girdiniz";
+
+            }
+            else
+            {
+                lblMesaj.Text = "Kaybettiniz!";
+                btnTahmin.Enabled = false;
+            }
+
+
+            txtSayi.Text = "";
+
+
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+
             //progressbar value deðerini 1 azalt
             pbarDurum.Value--;
+
+            btnTahmin.Text = "Tahmin Et (" + pbarDurum.Value + ")";
 
             if (pbarDurum.Value > 30 && pbarDurum.Value <= 50)
                 lblDurum.Text = "Süre daha var :)";
@@ -67,6 +108,7 @@ namespace SayiTahminOyunu
                 timer1.Stop();
                 btnBaslat.Enabled = true;
                 lblDurum.Text = "Süreniz bitti.";
+                lblMesaj.Text = "Kaybettiniz!";
             }
 
         }
