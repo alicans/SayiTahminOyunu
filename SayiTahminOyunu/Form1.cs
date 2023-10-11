@@ -88,9 +88,9 @@ namespace SayiTahminOyunu
 
             if (pbarDurum.Value > 30 && pbarDurum.Value <= 50)
                 lblDurum.Text = "Süre daha var :)";
-            if (pbarDurum.Value > 20 && pbarDurum.Value <= 29)
+            if (pbarDurum.Value > 20 && pbarDurum.Value <= 30)
                 lblDurum.Text = "Süre azalýyor..";
-            if (pbarDurum.Value > 1 && pbarDurum.Value <= 19)
+            if (pbarDurum.Value > 1 && pbarDurum.Value <= 20)
                 lblDurum.Text = "Süre çok az kaldý";
 
             if (pbarDurum.Value == pbarDurum.Minimum)
